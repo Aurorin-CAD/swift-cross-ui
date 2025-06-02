@@ -31,6 +31,7 @@ let package = Package(
     platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .macCatalyst(.v13)],
     dependencies: [
         .package(name: "swift-cross-ui", path: ".."),
+        .package(path: "../../MiniAudio"),
     ] + hotReloadingDependencies,
     targets: [
         .executableTarget(
@@ -94,6 +95,10 @@ let package = Package(
             name: "AdvancedCustomizationExample",
             dependencies: exampleDependencies,
             resources: [.copy("Banner.png")]
+        ),
+        .executableTarget(
+            name: "MusicPlayerExample",
+            dependencies: exampleDependencies + ["MiniAudio"]
         )
     ]
 )
