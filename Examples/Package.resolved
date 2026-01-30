@@ -1,5 +1,5 @@
 {
-  "originHash" : "dd63f095d6a2b7b6ab3aff17c27568510af59a6b664b9279065e23edc63cc6ed",
+  "originHash" : "05eeeb7230b4913f30574d641e97093e0691e626e49b01d710c64c56ed5c09fe",
   "pins" : [
     {
       "identity" : "aexml",
@@ -290,41 +290,41 @@
     {
       "identity" : "swift-uwp",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stackotter/swift-uwp",
+      "location" : "https://github.com/Aurorin-CAD/swift-uwp",
       "state" : {
-        "revision" : "8128f6615b7c5b46ada289ab6d49d871ca1e13a5"
+        "revision" : "c23402e4cbfdb7a557d3aa0cfdf78c046bed7f4e"
       }
     },
     {
       "identity" : "swift-webview2core",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stackotter/swift-webview2core",
+      "location" : "https://github.com/Aurorin-CAD/swift-webview2core",
       "state" : {
-        "revision" : "4396f5d94d6dfd1f95ab25e79de98141b7f4f183"
+        "revision" : "265c192b5bed1cae6a4af20114400f4dc1cefe7f"
       }
     },
     {
       "identity" : "swift-windowsappsdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stackotter/swift-windowsappsdk",
+      "location" : "https://github.com/Aurorin-CAD/swift-windowsappsdk",
       "state" : {
-        "revision" : "f1c50892f10c0f7f635d3c7a3d728fd634ad001a"
+        "revision" : "3a1be9709a3b9065c43463b94b54c5351624a030"
       }
     },
     {
       "identity" : "swift-windowsfoundation",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stackotter/swift-windowsfoundation",
+      "location" : "https://github.com/Aurorin-CAD/swift-windowsfoundation",
       "state" : {
-        "revision" : "4ad57d20553514bcb23724bdae9121569b19f172"
+        "revision" : "d42769d70552fe59fade6fdf44bfb71c86101db7"
       }
     },
     {
       "identity" : "swift-winui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stackotter/swift-winui",
+      "location" : "https://github.com/Aurorin-CAD/swift-winui",
       "state" : {
-        "revision" : "42c47f4e4129c8b5a5d9912f05e1168c924ac180"
+        "revision" : "7dfd8bbde6baa21ad177f3b174b2a8c1fa196704"
       }
     },
     {
