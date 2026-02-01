@@ -1,5 +1,5 @@
 {
-  "originHash" : "1e8a866a04df859b6a4025f68725f8e16fd2944dfbeea27f6394c4d56f460911",
+  "originHash" : "27514c89a6281b652f580a01028064b9beb4e680acfe909a65fdf50dcd0c741f",
   "pins" : [
     {
       "identity" : "jpeg",
@@ -111,41 +111,41 @@
     {
       "identity" : "swift-uwp",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Aurorin-CAD/swift-uwp",
+      "location" : "https://github.com/stackotter/swift-uwp",
       "state" : {
-        "revision" : "c23402e4cbfdb7a557d3aa0cfdf78c046bed7f4e"
+        "revision" : "8128f6615b7c5b46ada289ab6d49d871ca1e13a5"
       }
     },
     {
       "identity" : "swift-webview2core",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Aurorin-CAD/swift-webview2core",
+      "location" : "https://github.com/stackotter/swift-webview2core",
       "state" : {
-        "revision" : "265c192b5bed1cae6a4af20114400f4dc1cefe7f"
+        "revision" : "4396f5d94d6dfd1f95ab25e79de98141b7f4f183"
       }
     },
     {
       "identity" : "swift-windowsappsdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Aurorin-CAD/swift-windowsappsdk",
+      "location" : "https://github.com/stackotter/swift-windowsappsdk",
       "state" : {
-        "revision" : "3a1be9709a3b9065c43463b94b54c5351624a030"
+        "revision" : "f1c50892f10c0f7f635d3c7a3d728fd634ad001a"
       }
     },
     {
       "identity" : "swift-windowsfoundation",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Aurorin-CAD/swift-windowsfoundation",
+      "location" : "https://github.com/stackotter/swift-windowsfoundation",
       "state" : {
-        "revision" : "d42769d70552fe59fade6fdf44bfb71c86101db7"
+        "revision" : "4ad57d20553514bcb23724bdae9121569b19f172"
       }
     },
     {
       "identity" : "swift-winui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Aurorin-CAD/swift-winui",
+      "location" : "https://github.com/stackotter/swift-winui",
       "state" : {
-        "revision" : "7dfd8bbde6baa21ad177f3b174b2a8c1fa196704"
+        "revision" : "42c47f4e4129c8b5a5d9912f05e1168c924ac180"
       }
     },
     {
