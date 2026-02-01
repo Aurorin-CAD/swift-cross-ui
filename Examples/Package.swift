@@ -94,6 +94,12 @@ let package = Package(
             name: "AdvancedCustomizationExample",
             dependencies: exampleDependencies,
             resources: [.copy("Banner.png")]
-        )
+        ),
+        .executableTarget(
+            name: "HostingViewExample",
+            dependencies: exampleDependencies + [
+                .product(name: "AppKitBackend", package: "swift-cross-ui"),
+            ]
+        ),
     ]
 )
