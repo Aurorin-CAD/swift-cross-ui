@@ -287,13 +287,15 @@ public class ViewGraphNode<NodeView: View, Backend: BaseAppBackend>: ModelObserv
             )
         }
 
-        view.commit(
-            widget,
-            children: children,
-            layout: currentLayout,
-            environment: parentEnvironment,
-            backend: backend
-        )
+        self.observe(with: backend) {
+            view.commit(
+                widget,
+                children: children,
+                layout: currentLayout,
+                environment: parentEnvironment,
+                backend: backend
+            )
+        }
         resultCache = [:]
 
         backend.showUpdate(of: widget)
