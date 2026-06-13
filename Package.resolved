@@ -1,5 +1,5 @@
 {
-  "originHash" : "89559caa77ab2e6884fe8448f5a864bffa06c87d3250478a907d860967da63a8",
+  "originHash" : "65c0c20bd44a52e123fc87e5f5e45ecd75ee99986a8f00bf98792c7e9790dcfa",
   "pins" : [
     {
       "identity" : "androidkit",
@@ -71,6 +71,14 @@
       "state" : {
         "revision" : "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
         "version" : "1.6.0"
+      }
+    },
+    {
+      "identity" : "swift-cwinrt",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/thebrowsercompany/swift-cwinrt",
+      "state" : {
+        "revision" : "eb46cdb66f770a1e006f9fcfebbf9e99a0fba811"
       }
     },
     {
@@ -146,6 +154,15 @@
       }
     },
     {
+      "identity" : "swift-perception",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-perception.git",
+      "state" : {
+        "revision" : "25ac73741c3436605d61eceb5207e896973918e7",
+        "version" : "2.0.10"
+      }
+    },
+    {
       "identity" : "swift-subprocess",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftlang/swift-subprocess.git",
@@ -173,12 +190,43 @@
       }
     },
     {
+      "identity" : "swift-uwp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Aurorin-CAD/swift-uwp",
+      "state" : {
+        "revision" : "c23402e4cbfdb7a557d3aa0cfdf78c046bed7f4e"
+      }
+    },
+    {
+      "identity" : "swift-webview2core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Aurorin-CAD/swift-webview2core",
+      "state" : {
+        "revision" : "265c192b5bed1cae6a4af20114400f4dc1cefe7f"
+      }
+    },
+    {
+      "identity" : "swift-windowsappsdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Aurorin-CAD/swift-windowsappsdk",
+      "state" : {
+        "revision" : "3a1be9709a3b9065c43463b94b54c5351624a030"
+      }
+    },
+    {
+      "identity" : "swift-windowsfoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Aurorin-CAD/swift-windowsfoundation",
+      "state" : {
+        "revision" : "d42769d70552fe59fade6fdf44bfb71c86101db7"
+      }
+    },
+    {
       "identity" : "swift-winui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/moreSwift/swift-winui",
+      "location" : "https://github.com/Aurorin-CAD/swift-winui.git",
       "state" : {
-        "revision" : "7cce3fcd0b55c48e6d8993fd2c7c392e8bc945c4",
-        "version" : "0.2.0"
+        "revision" : "7dfd8bbde6baa21ad177f3b174b2a8c1fa196704"
       }
     },
     {
@@ -197,6 +245,15 @@
       "state" : {
         "revision" : "ad30daacb7e4666e1a56bfdd48498f5ac4ff081d",
         "version" : "0.3.0"
+      }
+    },
+    {
+      "identity" : "xctest-dynamic-overlay",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
+      "state" : {
+        "revision" : "cb281f343fd953280336dcbd3822cdf47c182f5b",
+        "version" : "1.10.0"
       }
     },
     {

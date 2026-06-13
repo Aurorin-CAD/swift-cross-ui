@@ -29,6 +29,19 @@ public final class AppKitBackend: FullAppBackend {
     ]
     public let canOverrideWindowColorScheme = true
 
+    private static var suppressActivation: Bool {
+        // Private Aurorin dev-script handshake for `--no-focus` agent validation.
+        let suppressActivationValue =
+            ProcessInfo.processInfo.environment["_AURORIN_SWIFTCROSSUI_SUPPRESS_ACTIVATION"]?
+                .lowercased()
+        return switch suppressActivationValue {
+            case "1", "true", "yes", "on":
+                true
+            default:
+                false
+        }
+    }
+
     public var scrollBarWidth: Int {
         // We assume that all scrollers have their controlSize set to `.regular` by default.
         // The internet seems to indicate that this is true regardless of any system wide
@@ -57,7 +70,9 @@ public final class AppKitBackend: FullAppBackend {
         MenuBar.setUpMenuBar(extraMenus: [])
 
         callback()
-        NSApplication.shared.activate(ignoringOtherApps: true)
+        if !Self.suppressActivation {
+            NSApplication.shared.activate(ignoringOtherApps: true)
+        }
         NSApplication.shared.run()
     }
 
@@ -163,11 +178,19 @@ public final class AppKitBackend: FullAppBackend {
     }
 
     public func show(window: Window) {
-        window.makeKeyAndOrderFront(nil)
+        if Self.suppressActivation {
+            window.orderFront(nil)
+        } else {
+            window.makeKeyAndOrderFront(nil)
+        }
     }
 
     public func activate(window: Window) {
-        window.makeKeyAndOrderFront(nil)
+        if Self.suppressActivation {
+            window.orderFront(nil)
+        } else {
+            window.makeKeyAndOrderFront(nil)
+        }
     }
 
     public func setApplicationMenu(

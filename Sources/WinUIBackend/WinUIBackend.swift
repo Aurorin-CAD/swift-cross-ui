@@ -25,6 +25,7 @@ class WinUIApplication: SwiftApplication, @unchecked Sendable {
     static let callback = Mutex<(@MainActor (WinUIApplication) -> Void)?>(nil)
 
     override func onLaunched(_ args: WinUI.LaunchActivatedEventArgs) {
+        logger.notice("WinUIApplication.onLaunched")
         Self.callback.withLock { callback in
             // We can't explicitly hop to the main actor because we haven't set up
             // our WinUI MainActor fix yet.
@@ -136,18 +137,23 @@ public final class WinUIBackend:
     }
 
     public func runMainLoop(_ callback: @escaping @MainActor () -> Void) {
-        do {
-            try Self.attachToParentConsole()
-        } catch {
-            // We essentially just ignore if this fails because it's just a QoL
-            // debugging feature, and if it fails then any warning we print likely
-            // won't get seen anyway. But I don't trust my Windows knowledge enough
-            // to assert that it's impossible to view logs on failure, so let's
-            // print a warning anyway.
-            logger.warning(
-                "failed to attach to parent console",
-                metadata: ["error": "\(error)"]
-            )
+        logger.notice("WinUIBackend.runMainLoop")
+        if ProcessInfo.processInfo.environment["_AURORIN_SWIFTCROSSUI_DISABLE_CONSOLE_ATTACH"] == "1" {
+            logger.notice("WinUIBackend skipping parent console attach")
+        } else {
+            do {
+                try Self.attachToParentConsole()
+            } catch {
+                // We essentially just ignore if this fails because it's just a QoL
+                // debugging feature, and if it fails then any warning we print likely
+                // won't get seen anyway. But I don't trust my Windows knowledge enough
+                // to assert that it's impossible to view logs on failure, so let's
+                // print a warning anyway.
+                logger.warning(
+                    "failed to attach to parent console",
+                    metadata: ["error": "\(error)"]
+                )
+            }
         }
 
         // Ensure that the app's windows adapt to DPI changes at runtime
@@ -155,6 +161,7 @@ public final class WinUIBackend:
 
         WinUIApplication.callback.withLock { launchCallback in
             launchCallback = { application in
+                logger.notice("WinUIBackend launch callback")
                 // Toggle Switch has annoying default 'internal margins' (not Control
                 // margins that we can set directly) that we can luckily get rid of by
                 // overriding the relevant resource values.
@@ -182,6 +189,7 @@ public final class WinUIBackend:
                 callback()
             }
         }
+        logger.notice("WinUIBackend starting WinUIApplication")
         WinUIApplication.main()
     }
 
