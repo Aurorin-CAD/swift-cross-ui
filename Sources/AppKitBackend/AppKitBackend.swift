@@ -884,6 +884,14 @@ public final class AppKitBackend: FullAppBackend {
         scrollView.hasHorizontalScroller = hasHorizontalScrollBar
         scrollView.verticalScrollElasticity = bounceVertically ? .allowed : .none
         scrollView.horizontalScrollElasticity = bounceHorizontally ? .allowed : .none
+        if let scrollView = scrollView as? NSCustomScrollView {
+            scrollView.canScrollHorizontally = hasHorizontalScrollBar
+            scrollView.canScrollVertically = hasVerticalScrollBar
+        }
+        scrollView.automaticallyAdjustsContentInsets = false
+        scrollView.contentInsets =
+            (scrollView as? NSCustomScrollView)?.contentLayoutInsets ?? NSEdgeInsetsZero
+        scrollView.scrollerInsets = scrollView.contentInsets
     }
 
     public func createSelectableListView() -> Widget {
@@ -1823,8 +1831,34 @@ final class NSDisabledScrollView: NSScrollView {
 }
 
 final class NSCustomScrollView: NSScrollView {
+    var canScrollHorizontally = false
+    var canScrollVertically = false
+
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
         true
+    }
+
+    override func scrollWheel(with event: NSEvent) {
+        if !canScrollHorizontally && !canScrollVertically {
+            return
+        }
+
+        super.scrollWheel(with: event)
+    }
+
+    var contentLayoutInsets: NSEdgeInsets {
+        guard let window else {
+            return NSEdgeInsetsZero
+        }
+
+        let scrollFrame = convert(bounds, to: nil)
+        let layoutRect = window.contentLayoutRect
+        return NSEdgeInsets(
+            top: max(0, scrollFrame.maxY - layoutRect.maxY),
+            left: max(0, layoutRect.minX - scrollFrame.minX),
+            bottom: max(0, layoutRect.minY - scrollFrame.minY),
+            right: max(0, scrollFrame.maxX - layoutRect.maxX)
+        )
     }
 }
 
