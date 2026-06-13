@@ -50,8 +50,9 @@ public final class WinUIBackend:
     BackendFeatures.Colors,
     BackendFeatures.DatePickers,
     BackendFeatures.Windowing,
-    BackendFeatures.LinearGradients,
-    BackendFeatures.RadialGradients
+    BackendFeatures.LinearGradients
+    // BackendFeatures.RadialGradients is unsupported: the Aurorin-CAD swift-winui
+    // bindings don't project Microsoft.UI.Xaml.Media.RadialGradientBrush.
 {
     // Logging
     private struct LogLocation: Hashable, Equatable {
