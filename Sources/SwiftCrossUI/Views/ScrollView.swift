@@ -131,6 +131,8 @@ public struct ScrollView<Content: View>: TypeSafeView, View {
             outerSize.width =
                 proposedSize.width
                     ?? (finalChildResult.size.width + verticalScrollBarWidth)
+        } else if let proposedWidth = proposedSize.width {
+            outerSize.width = proposedWidth
         } else {
             outerSize.width += verticalScrollBarWidth
         }
@@ -139,6 +141,8 @@ public struct ScrollView<Content: View>: TypeSafeView, View {
             outerSize.height =
                 proposedSize.height
                     ?? (finalChildResult.size.height + horizontalScrollBarHeight)
+        } else if let proposedHeight = proposedSize.height {
+            outerSize.height = proposedHeight
         } else {
             outerSize.height += horizontalScrollBarHeight
         }

@@ -849,10 +849,10 @@ public final class AppKitBackend: FullAppBackend {
     }
 
     public func createScrollContainer(for child: Widget) -> Widget {
-        let scrollView = NSScrollView()
+        let scrollView = NSCustomScrollView()
 
         let clipView = scrollView.contentView
-        let documentView = NSStackView()
+        let documentView = NSHitTestStackView()
         documentView.orientation = .vertical
         documentView.alignment = .leading
         documentView.translatesAutoresizingMaskIntoConstraints = false
@@ -1819,6 +1819,22 @@ final class NSCustomApplicationDelegate: NSObject, NSApplicationDelegate {
 final class NSDisabledScrollView: NSScrollView {
     override func scrollWheel(with event: NSEvent) {
         self.nextResponder?.scrollWheel(with: event)
+    }
+}
+
+final class NSCustomScrollView: NSScrollView {
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
+        true
+    }
+}
+
+final class NSHitTestStackView: NSStackView {
+    override func hitTest(_ point: NSPoint) -> NSView? {
+        super.hitTest(point) ?? (bounds.contains(point) ? self : nil)
+    }
+
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
+        true
     }
 }
 
